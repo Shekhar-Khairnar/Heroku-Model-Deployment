@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<BODY BGCOLOR="BLACK" TEXT="WHITE">
+<body>
+
+<style> 
+input{
+  width: 22%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size : 25px;
+  box-sizing: border-box;
+}
+
+</style>
+
+<style>
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size : 35px; 
+}
+
+button {width: 350px;}
+</style>
+
+<style>
+h1 {
+  font-size: 55px;
+}
+
+p {
+font-size: 45px;
+}
+
+</style>
+<body>
+ <div class="login">
+<center>
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+<center>
+    	<input type="number" name="R&D Spend" placeholder=" R&D Spend " required="required" /><br><br>
+	<center>
+        <input type="number" name="Administration" placeholder="Administration" required="required"/><br><br>
+		<center>			<input type="number" name="Marketing Spend" placeholder="Marketing Spend" required="required" /><br><br><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+<br>
+
+<body>
+<p>
+
+  {{ prediction_text }}
+
+</p>
+ </div>
+
+
+</body>
+</html>
